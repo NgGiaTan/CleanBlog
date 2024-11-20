@@ -1,4 +1,4 @@
-# Test MongoDB Project
+# Clean Blog Project
 
 This is a simple Node.js project that uses **Express** for routing and **Mongoose** for MongoDB database interaction. The project uses **EJS** as the templating engine to render dynamic views.
 
