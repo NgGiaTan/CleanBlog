@@ -1,7 +1,8 @@
 const express = require('express')
-const mongoose = require('mongoose');
-const expressSession = require('express-session');
 const app = new express()
+
+const expressSession = require('express-session');
+
 //Khai bao ejs engine
 const ejs = require('ejs')
 app.set('view engine','ejs')
@@ -16,8 +17,8 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
-
-
+// Kết nối db qua mongoose
+const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/my_database')
 
 //Đăng ký thư mục public.
