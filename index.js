@@ -1,8 +1,7 @@
 const express = require('express')
-const app = new express()
-
+const mongoose = require('mongoose');
 const expressSession = require('express-session');
-
+const app = new express()
 //Khai bao ejs engine
 const ejs = require('ejs')
 app.set('view engine','ejs')
