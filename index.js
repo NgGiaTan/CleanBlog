@@ -18,8 +18,14 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
 // Kết nối db qua mongoose
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/my_database')
+const dbURI = process.env.MONGODB_URI;
+
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('MongoDB Connected'))
+  .catch((err) => console.error('MongoDB Connection Error:', err));
 
 //Đăng ký thư mục public.
 app.use(express.static('public'))
